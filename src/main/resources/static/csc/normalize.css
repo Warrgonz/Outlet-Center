@@ -1,0 +1,53 @@
+/*Root css config*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary: #085182; /*Navy blue*/
+    --secondary: #d31f31; /*Elegant red*/
+    --third: #ffffff; /*White*/
+    --root-size: 16px;
+    --h1-size: 2rem;
+    --h2-size: 1.5rem;
+    --h3-size: 1.25rem;
+    --paragraph: 1rem;
+    --font-family: 'Open Sans', sans-serif;
+}
+
+html {
+    font-size: var(--root-size);
+    font-family: var(--font-family);
+}
+
+h1 {
+    font-size: var(--h1-size);
+    margin: 0.67em 0;
+    font-weight: 600;
+}
+
+p {
+    font-size: var(--paragraph);
+    margin: 0.30em 0;
+    font-weight: 300;
+}
+
+h2 {
+    font-size: var(--h2-size);
+    margin: 0.60em 0;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: var(--h3-size);
+    margin: 0.57em 0;
+    font-weight: 400;
+}
+
+img {
+    border-style: none;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <!--Head fragment-->
+    <head th:fragment="head">
+        <title>Outlet center</title>
+        <!--Metas-->
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!--links-->
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet" type="text/css"/>
+        <link rel="icon" type="png" href="../../static/img/favicon.png"/>
+        <link href="../../static/csc/normalize.css" rel="stylesheet" type="text/css"/>
+        <!--Scripts-->
+        <script th:src="@{/js/rutinas.js}"></script>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    </head>
+
+    <body>
+        <!--Navbar fragment-->
+        <nav th:fragment="navbar">
+            <!-- contenido de la barra de navegación -->
+        </nav>
+
+        <!--Footer fragment-->
+        <footer th:fragment="footer">
+            <!-- contenido de la barra de navegación -->
+        </footer>
+    </body>
+</html>
