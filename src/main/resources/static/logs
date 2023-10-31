@@ -1,2 +1,39 @@
 
 
+     <header th:fragment="navbar" class="container-fluid d-flex justify-content-between">
+            <!-- contenido de la barra de navegación -->      
+            <nav class="navbar navbar-expand-lg container-fluid">
+                <div class="container-fluid">
+                    <img src="/img/outlet-center.png" alt="outlet-center" class="icon"/> 
+                    <form class="d-flex justify-content-center" style="width: 100%;" role="search">
+                        <input class="form-control me-0" type="search" placeholder="Search" aria-label="Search">
+                    </form>
+                    <ul class="navbar-nav list-opt">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">[[#{plantilla.idioma}]]</a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item"  th:href="@{/(lang=es)}">ES</a></li>
+                                <li><a class="dropdown-item" th:href="@{/(lang=en)}">EN</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" 
+                               data-bs-toggle="dropdown" 
+                               href="#" 
+                               role="button" 
+                               aria-expanded="false">[[#{plantilla.pruebas}]]</a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item"  th:href="@{/pruebas/listado}">[[#{plantilla.asociaciones}]]</a></li>
+                                <li><a class="dropdown-item"  th:href="@{/pruebas/listado2}">[[#{plantilla.consultas}]]</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div>
+
+
+            </div>
+
+
+        </header> 

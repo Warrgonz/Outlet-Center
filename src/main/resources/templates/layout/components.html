@@ -11,24 +11,72 @@
         <!--links-->
         <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
         <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet" type="text/css"/>
-        <link rel="icon" type="png" href="../../static/img/favicon.png"/>
+        <link rel="icon" type="png" href="/img/favicon.png"/>
         <link href="../../static/csc/normalize.css" rel="stylesheet" type="text/css"/>
+        <link href="/csc/styles.css" rel="stylesheet" type="text/css"/>
         <!--Scripts-->
         <script th:src="@{/js/rutinas.js}"></script>
         <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
         <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
         <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
     </head>
 
     <body>
         <!--Navbar fragment-->
-        <nav th:fragment="navbar">
-            <!-- contenido de la barra de navegación -->
-        </nav>
+        <header th:fragment="navbar" class="container-fluid d-flex justify-content-between">
+            <!-- contenido de la barra de navegación -->      
+            <nav class="navbar navbar-expand-lg container-fluid d-flex align-items-center row"> 
+                <div class="col-md-2 col-lg-2">
+                    <img src="/img/outlet-center.png" alt="outlet-center" class="icon"/> 
+                </div>
+                <div class="col-md-3 col-lg-7">
+                    <form class="d-flex justify-content-center" style="width: 100%;" role="search">
+                        <input class="form-control me-0" type="search" placeholder="[[#{plantilla.asociaciones}]]" aria-label="Search">
+                    </form>
+                </div>
+                <div class="col-md-5 col-lg-3 navbar-nav mx-5 list-opt d-flex align-items-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">[[#{plantilla.idioma}]]</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item"  th:href="@{/(lang=es)}">ES</a></li>
+                            <li><a class="dropdown-item" th:href="@{/(lang=en)}">EN</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " 
+                           data-bs-toggle="dropdown" 
+                           href="#" 
+                           role="button" 
+                           aria-expanded="false">
+                            <div class="d-flex flex-column">
+                                <span class="class ">Hola, usuario</span>
+                                <span class="class dropdown-toggle">Cuenta y pedidos</span>
+                            </div>
+
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item"  th:href="@{/pruebas/listado}">[[#{plantilla.asociaciones}]]</a></li>
+                            <li><a class="dropdown-item"  th:href="@{/pruebas/listado2}">[[#{plantilla.consultas}]]</a></li>
+                        </ul>
+                    </li>
+                </div>
+                
+                <!--
+                Pendiente: Trabajar en el md implementando el menu hamburguesa para idioma y cuenta y pedidos. Trabajar en responsividad.
+                -->
+
+
+            </nav>
+
+
+        </header> 
+
 
         <!--Footer fragment-->
         <footer th:fragment="footer">
             <!-- contenido de la barra de navegación -->
+
         </footer>
     </body>
 </html>
