@@ -15,6 +15,7 @@
         <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
             <link href="../../static/csc/normalize.css" rel="stylesheet" type="text/css"/>
             <link href="/csc/styles.css" rel="stylesheet" type="text/css"/>
+            <link href="/csc/login.css" rel="stylesheet" type="text/css"/>
             <!--Scripts-->
             <script th:src="@{/js/rutinas.js}"></script>
             <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
@@ -22,7 +23,6 @@
             <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 
     </head>
-
     <body>
         <!--Navbar fragment-->
         <div th:fragment="navbar">
@@ -134,7 +134,7 @@
                             <label class="py-3">[[#{pie.subscribete}]]</label>
                             <div class="d-flex">
                                 <input type="email" placeholder="Ingrese su correo electrónico" class="form-control mx-3">
-                                    <button>Enviar</button>
+                                    <a th:href="@{/login}"><button>Enviar</button></a>
                             </div>
                         </form>
 

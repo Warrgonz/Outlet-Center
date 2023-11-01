@@ -1,0 +1,114 @@
+.login {
+    width: 100vw;
+    height: 100vh;
+}
+
+.login .card {
+    width: 550px;
+    /*Ajustar media*/
+    background-color: #131921;
+    color: white;
+}
+
+.login .card .brand-icon {
+    width: 100%;
+}
+
+.login .card button {
+    background-color: #085182;
+    border: none;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.login .card button:hover {
+    background-color: #393276;
+}
+
+.login .card input {
+    background-color: #232f3e;
+    border: #232f3e;
+    color: white;
+}
+
+.login .card input:focus {
+    background-color: #232f3e;
+    border: #232f3e;
+    color: white;
+}
+
+.login .card a {
+    text-decoration: none;
+    color: white;
+    ;
+    font-weight: bolder;
+
+}
+
+.login .card a:hover {
+    text-decoration: none;
+    color: #393276;
+    font-weight: bolder;
+}
+
+/*Wallpaper*/
+
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #085182 50%, #09f 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .login .card {
+        width: 600px;
+        /*Ajustar media*/
+        background-color: #131921;
+        color: white;
+    }
+    
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .login .card {
+        width: 400px;
+        /*Ajustar media*/
+        background-color: #131921;
+        color: white;
+    }
+    
+}
