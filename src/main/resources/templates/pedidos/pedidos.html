@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/components :: head}">
+        <title>Outlet center</title>
+    </head> 
+    <body>
+        <nav th:replace="~{layout/components :: navbar }"></nav>
+        <main>
+            <section class="pedidos text-center">
+                <h2>[[#{pedidos.title}]]</h2>
+            </section>
+            <section class="py-5">
+                <div class="container">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">[[#{pedidos.orden }]]</th>
+                                <th scope="col">[[#{pedidos.fecha}]]</th>
+                                <th scope="col">[[#{pedidos.monto}]]</th>
+                                <th scope="col">[[#{pedidos.estado}]]</th>
+                                <th scope="col">[[#{pedidos.detalle}]]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">110-103245-15637</th>
+                                <td>01/11/2023</td>
+                                <td>$175</td>
+                                <td><button class="btn btn-success btn-sm">[[#{pedidos.entregado}]]</button></td>
+                                <td><button class="btn btn-details btn-sm">[[#{pedidos.detalle}]]</button></td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row">110-103245-15638</th>
+                                <td>02/11/2023</td>
+                                <td>$175</td>
+                                <td><button class="btn btn-warning btn-sm">[[#{pedidos.progreso}]]</button></td>
+                                <td><button class="btn btn-details btn-sm">[[#{pedidos.detalle}]]</button></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">110-103245-15639</th>
+                                <td>02/11/2023</td>
+                                <td>$175</td>
+                                <td><button class="btn btn-danger btn-sm">[[#{pedidos.revision}]]</button></td>
+                                <td><button class="btn btn-details btn-sm">[[#{pedidos.detalle}]]</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+        <footer th:replace="~{layout/components :: footer }"></footer>
+    </body>
+</html>

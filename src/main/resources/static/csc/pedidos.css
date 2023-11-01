@@ -1,0 +1,28 @@
+.pedidos{
+    padding: 6%;
+    background-image: linear-gradient(to bottom, white, #003050), url("../img/pedidos.jpg");
+    background-position: center;
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.btn-details{
+    background-color: #085182;
+    border: none;
+    width: 7em;
+    height: 3em;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.btn-details:hover{
+    background-color: #393276;
+    color:white;
+
+}
