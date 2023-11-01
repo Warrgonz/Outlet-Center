@@ -10,7 +10,8 @@
 :root{
     --primary: #085182; /*Navy blue*/
     --secondary: #d31f31; /*Elegant red*/
-    --third: #ffffff; /*White*/
+    --third: ##393276; /*Purple for btn*/ 
+    --white: #ffffff; /*White*/
     --root-size: 16px;
     --h1-size: 2rem;
     --h2-size: 1.5rem;
@@ -50,4 +51,21 @@ h3 {
 
 img {
     border-style: none;
+}
+
+button{
+    background-color: #085182;
+    border: none;
+    width: 7em;
+    height: 3em;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #393276;
 }
