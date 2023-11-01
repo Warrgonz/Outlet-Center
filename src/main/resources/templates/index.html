@@ -5,13 +5,12 @@
     </head> 
     <body>
         <nav th:replace="~{layout/components :: navbar }"></nav>
-        <main>
-            <a th:href="@{/login}">Iniciar sesión</a>
-            <a th:href="@{/pedidos}">Tus pedidos</a>
-            <a th:href="@{/login}">Iniciar sesión</a>
-            <a th:href="@{/profile}">Profile</a>
-            <a th:href="@{/ayuda}">Centro de ayuda</a>
-        </main>
+        <ul class="d-flex flex-column py-4">
+            <li><a th:href="@{/login}">Iniciar sesión</a></li>
+            <li><a th:href="@{/pedidos}">Tus pedidos</a></li>
+            <li><a th:href="@{/profile}">Profile</a></li> 
+            <li><a th:href="@{/ayuda}">Centro de ayuda</a></li>
+        </ul>
         <footer th:replace="~{layout/components :: footer }"></footer>
     </body>
 </html>

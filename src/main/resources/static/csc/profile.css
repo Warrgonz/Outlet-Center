@@ -21,14 +21,43 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 .profileContainer{
     display: grid;
-    grid-template-columns: 2fr 4fr;
+    grid-template-columns: 3fr 7fr;
+    padding: 30px 30px 30px 30px;
 
 }
 
-.red-column {
+.img-column{
+     display: flex;
+     justify-content: center;
+    
+     align-items: flex-start;
 
 }
 
 .blue-column {
 
+}
+
+#Change-passbtn{    
+    background-color: #085182;
+    border: none;
+    width: 11em;
+    height: 3em;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+#Change-passbtn:hover{
+    background-color: #393276;
+}
+
+#bottom-btns{
+    display: flex;
+    justify-content: flex-end;
+    gap: 4px;
+    padding-right: 30px;
 }
