@@ -3,12 +3,14 @@
     <head th:replace="~{layout/components :: head}">
         <title>Outlet center</title>
     </head> 
-
     <body>
         <nav th:replace="~{layout/components :: navbar }"></nav>
         <main>
             <a th:href="@{/login}">Iniciar sesión</a>
             <a th:href="@{/pedidos}">Tus pedidos</a>
+            <a th:href="@{/login}">Iniciar sesión</a>
+            <a th:href="@{/profile}">Profile</a>
+            <a th:href="@{/ayuda}">Centro de ayuda</a>
         </main>
         <footer th:replace="~{layout/components :: footer }"></footer>
     </body>

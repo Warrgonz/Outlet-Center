@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/components :: head}">
+        <title>Outlet center</title>
+    </head>
+
+
+    <body>
+        <nav th:replace="~{layout/components :: navbar }"></nav>
+        <main>
+            <div class="profileContainer">
+                <div>                    
+                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="img-thumbnail" alt="...">
+                </div>
+                <div class="blue-column">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name-Profile" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name-Profile" aria-describedby="emailHelp">                               
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">                               
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+
+                </div>
+            </div>
+
+        </main>
+        <footer th:replace="~{layout/components :: footer }"></footer>
+    </body>
+</html>
