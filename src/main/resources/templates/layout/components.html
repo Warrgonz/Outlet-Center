@@ -12,71 +12,155 @@
         <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
         <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet" type="text/css"/>
         <link rel="icon" type="png" href="/img/favicon.png"/>
-        <link href="../../static/csc/normalize.css" rel="stylesheet" type="text/css"/>
-        <link href="/csc/styles.css" rel="stylesheet" type="text/css"/>
-        <!--Scripts-->
-        <script th:src="@{/js/rutinas.js}"></script>
-        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
-        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+        <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+            <link href="../../static/csc/normalize.css" rel="stylesheet" type="text/css"/>
+            <link href="/csc/styles.css" rel="stylesheet" type="text/css"/>
+            <!--Scripts-->
+            <script th:src="@{/js/rutinas.js}"></script>
+            <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+            <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+            <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 
     </head>
 
     <body>
         <!--Navbar fragment-->
-        <header th:fragment="navbar" class="container-fluid d-flex justify-content-between">
-            <!-- contenido de la barra de navegación -->      
-            <nav class="navbar navbar-expand-lg container-fluid d-flex align-items-center row"> 
-                <div class="col-md-2 col-lg-2">
-                    <img src="/img/outlet-center.png" alt="outlet-center" class="icon"/> 
-                </div>
-                <div class="col-md-3 col-lg-7">
-                    <form class="d-flex justify-content-center" style="width: 100%;" role="search">
-                        <input class="form-control me-0" type="search" placeholder="${plantilla.asociaciones}" aria-label="Search">
-                    </form>
-                </div>
-                <div class="col-md-5 col-lg-3 navbar-nav mx-5 list-opt d-flex align-items-center">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">[[#{plantilla.idioma}]]</a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item"  th:href="@{/(lang=es)}">ES</a></li>
-                            <li><a class="dropdown-item" th:href="@{/(lang=en)}">EN</a></li>
+        <div th:fragment="navbar">
+            <header class="navbar navbar-expand-lg">
+                <div class="container-fluid ">
+                    <a class="navbar-brand" href="#">
+                        <img src="/img/outlet-center.png" class="icon" alt="outlet-center">
+                    </a>
+                    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <form class="d-flex align-items-center" role="search">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </form>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
+                            <li class="shopping-cart py-2 d-flex align-items-center text-light">
+                                <i class="fa-solid fa-cart-shopping mx-1"></i>
+                                <span>[[#{carrito.carrito}]]</span>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                   aria-expanded="false">[[#{plantilla.idioma}]]</a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" th:href="@{/(lang=es)}"><span
+                                                class="flag-icon flag-icon-es flag-icon-squared"></span> ES</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/(lang=en)}"><span
+                                                class="flag-icon flag-icon-us flag-icon-squared"></span> EN</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                                    <div class="d-flex flex-column">
+                                        <span class="class ">[[#{encabezado.usuario}]]</span>
+                                        <span class="class dropdown-toggle">[[#{encabezado.config}]]</span>
+                                    </div>
+
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" th:href="@{/pruebas/listado}"><i class="fa-solid fa-user"
+                                                                                                  style="margin-right: 20px;"></i>[[#{encabezado.cuenta}]]</a>
+                                    </li>
+                                    <li><a class="dropdown-item" th:href="@{/pruebas/listado2}"><i
+                                                class="fa-solid fa-right-from-bracket" style="margin-right: 10px;"></i> [[#{encabezado.sesion}]]</a>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link " 
-                           data-bs-toggle="dropdown" 
-                           href="#" 
-                           role="button" 
-                           aria-expanded="false">
-                            <div class="d-flex flex-column">
-                                <span class="class ">Hola, usuario</span>
-                                <span class="class dropdown-toggle">Cuenta y pedidos</span>
-                            </div>
 
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item"  th:href="@{/pruebas/listado}">[[#{plantilla.asociaciones}]]</a></li>
-                            <li><a class="dropdown-item"  th:href="@{/pruebas/listado2}">[[#{plantilla.consultas}]]</a></li>
-                        </ul>
-                    </li>
+                    </div>
                 </div>
-                
-                <!--
-                Pendiente: Trabajar en el md implementando el menu hamburguesa para idioma y cuenta y pedidos. Trabajar en responsividad.
-                -->
-
-
+            </header>
+            <nav class="navbar navbar-expand-lg">
+                <div class="menu px-5 text-light" data-bs-toggle="offcanvas" data-bs-target="#all-menu"
+                     aria-controls="all-menu">
+                    <i class="fa-solid fa-bars"></i>
+                    <span>[[#{barra.opciones}]]</span>
+                </div>
             </nav>
-
-
-        </header> 
+            <section>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="all-menu" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                        <img src="/img/outlet-center.png" class="icon" alt="outlet-center">
+                            <button type="button" class="btn-close text-light" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                            <div class="container-fluid">
+                                <div>
+                                    <ul class="navbar-nav d-flex flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="#">[[#{barra.nosotros}]]</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#">[[#{barra.categorias}]]</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#">[[#{barra.deseos}]]</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#">[[#{barra.ayuda}]]</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#">[[#{barra.ubica}]]</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+        </div> 
 
 
         <!--Footer fragment-->
-        <footer th:fragment="footer">
-            <!-- contenido de la barra de navegación -->
+        <footer th:fragment="footer" class="text-white">
+            <!-- Grid container -->
+            <div class="container p-4">
+                <!-- Section: Social media -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form>
+                            <label class="py-3">[[#{pie.subscribete}]]</label>
+                            <div class="d-flex">
+                                <input type="email" placeholder="Ingrese su correo electrónico" class="form-control mx-3">
+                                    <button>Enviar</button>
+                            </div>
+                        </form>
 
+                    </div>
+                    <div class="col-lg-6">
+                        <label class="py-3">[[#{pie.redes}]]</label>
+                        <section class="mb-4">
+                            <!-- Facebook -->
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <!-- Google -->
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                                    class="fab fa-google"></i></a>
+
+                            <!-- Instagram -->
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                                    class="fab fa-instagram"></i></a>
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center internal-footer p-3" >
+                © 2023 [[#{pie.copy}]]:
+                <a class="text-white">Universidad Fidélitas</a>
+            </div>
         </footer>
     </body>
 </html>

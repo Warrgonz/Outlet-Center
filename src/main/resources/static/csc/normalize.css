@@ -10,7 +10,7 @@
 :root{
     --primary: #085182; /*Navy blue*/
     --secondary: #d31f31; /*Elegant red*/
-    --third: ##393276; /*Purple for btn*/ 
+    --third: #393276; /*Purple for btn*/ 
     --white: #ffffff; /*White*/
     --root-size: 16px;
     --h1-size: 2rem;
