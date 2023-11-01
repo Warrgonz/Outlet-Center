@@ -1,0 +1,166 @@
+.navbar-brand {
+    width: 200px;
+    margin-right: 60px;
+    /*responsive edit*/
+}
+
+.icon {
+    width: 90%;
+    padding: 10px;
+
+}
+
+header a {
+    color: white !important;
+}
+
+header form {
+    width: 70%;
+    /*responsive edit*/
+    margin-right: 50px;
+    /*responsive edit*/
+}
+
+header input {
+    border-radius: 10px 0px 0px 10px !important;
+    caret-color: red;
+
+}
+
+header form button {
+    border-radius: 0px 10px 10px 0px !important;
+    width: 4em !important;
+}
+
+header li {
+    margin-right: 20px;
+}
+
+.dropdown-item i:hover {
+    color: red;
+}
+
+header .dropdown-item:hover {
+    background-color: initial;
+    border-color: initial;
+}
+
+/*test*/
+
+header button {
+    background-color: #085182;
+    border: none;
+    width: 3em;
+    height: 40px;
+    border-radius: 0px 0px 0px 0px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+header {
+    background-color: #131921;
+}
+
+nav {
+    background-color: #232f3e;
+}
+
+.dropdown-menu {
+    background-color: #131921;
+    border: 2px solid #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.shopping-cart{
+    cursor: pointer;
+}
+html{
+    overflow-x: hidden;
+}
+
+footer{
+    background-color: #232f3e;
+}
+
+footer input{
+    width: 60% !important;
+}
+
+.internal-footer{
+    background-color: #131921;
+}
+
+button{
+    background-color: #085182;
+    border: none;
+    width: 7em;
+    height: 3em;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #393276;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .navbar-brand {
+        margin-right: 0;
+    }
+    header form {
+        width: 100%; /*input size*/
+        margin-right: 0px;
+        margin: 20px 0 20px;
+    }
+    header .navbar-nav{
+        align-items: initial !important;
+        margin-left: 20px;
+    }
+
+}
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .navbar-brand {
+        margin-right: 0;
+    }
+    header form {
+        width: 100%; /*input size*/
+        margin-right: 0px;
+        margin: 20px 0 20px;
+    }
+    header .navbar-nav{
+        align-items: initial !important;
+        margin-left: 20px;
+    }
+
+
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .navbar-brand {
+        margin-right: 0;
+    }
+    header form {
+        width: 100%; /*input size*/
+        margin-right: 0px;
+        margin: 20px 0 20px;
+    }
+    header .navbar-nav{
+        align-items: initial !important;
+        margin-left: 20px;
+    }
+    .icon {
+        width: 95%;
+        padding: 15px;
+    }
+}
