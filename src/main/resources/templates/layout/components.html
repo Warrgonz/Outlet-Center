@@ -29,7 +29,7 @@
         <div th:fragment="navbar">
             <header class="navbar navbar-expand-lg">
                 <div class="container-fluid ">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" th:href="@{/index}">
                         <img src="/img/outlet-center.png" class="icon" alt="outlet-center">
                     </a>
                     <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
@@ -67,7 +67,7 @@
 
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" th:href="@{/pruebas/listado}"><i class="fa-solid fa-user"
+                                    <li><a class="dropdown-item" th:href="@{/profile}"><i class="fa-solid fa-user"
                                                                                                   style="margin-right: 20px;"></i>[[#{encabezado.cuenta}]]</a>
                                     </li>
                                     <li><a class="dropdown-item" th:href="@{/pruebas/listado2}"><i

@@ -8,39 +8,46 @@
 
     <body>
         <nav th:replace="~{layout/components :: navbar }"></nav>
-        <main>
+        <main>                    
             <div class="profileContainer">
-                <div>                    
-                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="img-thumbnail" alt="...">
+                <div class="img-column">                
+                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="img-thumbnail" width="225" 
+                         height="300" alt="profile-Picture">
                 </div>
                 <div class="blue-column">
                     <form>
                         <div class="mb-3">
-                            <label for="name-Profile" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="name-Profile" aria-describedby="emailHelp">                               
+                            <label for="name-Profile" class="form-label">[[#{perfil.nombre}]]</label>
+                            <input type="text" class="form-control" id="name-Profile" aria-describedby="nameHelp">                               
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label for="lastname-Profile" class="form-label">[[#{perfil.apellido}]]</label>
+                            <input type="text" class="form-control" id="lastname-Profile" aria-describedby="lastnameHelp">                               
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">                               
+                            <label for="email-Profile" class="form-label">[[#{perfil.correo}]]</label>
+                            <input type="email" class="form-control" id="email-Profile" aria-describedby="emailHelp">                               
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label for="address-Profile" class="form-label">[[#{perfil.direccion}]]</label>
+                            <input type="text" class="form-control" id="address-Profile" aria-describedby="addressHelp">  
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone-Profile" class="form-label">[[#{perfil.telefono}]]</label>
+                            <input type="number" class="form-control" id="phone-Profile" min="8" max="11">
                         </div>
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                <label class="form-check-label" for="exampleCheck1">[[#{perfil.confirmar}]]</label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-
+                        <button type="submit" class="btn btn-success">[[#{perfil.Guardar}]]</button>
+                    </form>                  
                 </div>
             </div>
-
+            <div id="bottom-btns">                
+                <a><button id="Change-passbtn">Cambiar contraseña</button></a>
+                <a><button>Preguntas</button></a>
+            </div>
         </main>
         <footer th:replace="~{layout/components :: footer }"></footer>
     </body>
