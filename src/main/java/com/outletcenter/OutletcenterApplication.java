@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class OutletcenterApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OutletcenterApplication.class, args);
+		SpringApplication.run(OutletcenterApplication.class, args);            
 	}
 
 }
