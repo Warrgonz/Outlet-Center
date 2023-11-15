@@ -1,72 +1,32 @@
-<!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-    <head th:replace="~{layout/ayuda :: head}">
-        <title>Outlet center</title>
-        <link href="../static/csc/index.css" rel="stylesheet" type="text/css"/>
+    <head th:replace="~{layout/components :: head}">
+        <title>Outlet center</title>  
     </head>    
     <body>
-        <nav th:replace="~{layout/ayuda :: navbar }"></nav>
-
-
-        <main>
-
-
-            <br>
-                <div style="text-align: center; width: 50%; margin: 0 auto; color: blue"> 
-                    <h1> ¿Como puedo comprar? </h1>
+        
+         <nav th:replace="~{layout/components :: navbar }"></nav>
+        <main class="ayuda">
+            
+            <div style="text-align: center; width: 50%; margin: 0 auto;"> 
+                <h2>Centro de Ayuda</h2>
                 </div>
+            
+                <section  class="acordeon text-center" >
+                    <details>
+                        <summary>¿Como puedo realizar una compra?</summary>
+                        <p>Seleccionas el producto que deseas comprar y luego seleccionas la opcion de compra.</p>
+                    </details>
 
-                <div style="text-align: center; width: 50%; margin: 0 auto; color: black"> 
+                    <details>
+                        <summary>Cuales son los metodos de pago disponibles</summary>
+                        <p>Respuesta a la pregunta</p>
+                    </details>
 
-                    <p>
-                        Para poder comprar en nuestra pagina, lo primero que tienes que hacer es buscar el producto que mas te guste 
-                        y seleccionarlo, una vez seleccionado se va a desplegar una serie de opciones en las cuales va a estar la 
-                        opcion de comprar.
+                </section>
 
-                    </p>
-
-
-
-                </div>
-                <div style="text-align: center; width: 50%; margin: 0 auto; color: blue"> 
-                    <h1> ¿Cuales metodos de pago tienen disponibles? </h1>
-                </div>
-
-                <div style="text-align: center; width: 50%; margin: 0 auto; color: black"> 
-
-                    <p>
-                        Los metodos de pago posibles serian los siguientes:
-                        <p>-Pago con tarjeta</p> 
-                        <p>-Pago con sinpe</p>
-                        <p>-Pago en la caja</p>
-
-                    </p>
-
-
-
-                </div>
-                <div style="text-align: center; width: 50%; margin: 0 auto; color: blue"> 
-                    <h1> ¿Cuanto tarda en llegar mi pedido? </h1>
-                </div>
-
-                <div style="text-align: center; width: 50%; margin: 0 auto; color: black"> 
-
-                    <p>
-                        Una vez hagas el pedido, este sera enviado y entregado en un plazo de 3 a 5 dias laborables
-
-                    </p>
-
-
-
-                </div>
+               
         </main>
-
-        <footer th:replace="~{layout/ayuda :: footer}"></footer> 
+        <footer th:replace="~{layout/components :: footer}"></footer> 
     </body>
-
 </html>
 
