@@ -11,16 +11,14 @@
                     <div class="mb-3">
                         <img src="/img/outlet-center.png" class="brand-icon" alt="outlet-center">
                     </div>
-                    <form>
+                    <form method="POST" th:action="@/login">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">[[#{registro.correo}]]</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text text-light">[[#{registro.aviso}]]
-                                </div>
+                            <label for="username" class="form-label">[[#{login.username}]]</label>
+                            <input type="text" class="form-control" name="username" id="username">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">[[#{login.password}]]</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label for="password" class="form-label">[[#{login.password}]]</label>
+                            <input type="password" class="form-control" id="password">
                         </div>
                         <div class="mb-4 mt-4">
                             <button type="submit" class="btn btn-primary">[[#{login.iniciosesion}]]</button>
