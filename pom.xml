@@ -88,14 +88,15 @@
             <artifactId>firebase-admin</artifactId>
             <version>9.1.1</version>
         </dependency>  
-        <dependency>
+        <dependency><!--Login-->
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
+        </dependency>  
+        <dependency><!--Login-->
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity6</artifactId>
         </dependency>  
+
     </dependencies>
 
     <build>

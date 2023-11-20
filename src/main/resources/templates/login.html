@@ -11,14 +11,14 @@
                     <div class="mb-3">
                         <img src="/img/outlet-center.png" class="brand-icon" alt="outlet-center">
                     </div>
-                    <form method="POST" th:action="@/login">
+                    <form th:action="@{/login}" method="post">
                         <div class="mb-3">
                             <label for="username" class="form-label">[[#{login.username}]]</label>
                             <input type="text" class="form-control" name="username" id="username">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">[[#{login.password}]]</label>
-                            <input type="password" class="form-control" id="password">
+                            <input type="password" name="password" class="form-control" id="password">
                         </div>
                         <div class="mb-4 mt-4">
                             <button type="submit" class="btn btn-primary">[[#{login.iniciosesion}]]</button>
@@ -45,8 +45,6 @@
                                 </div>
                         </div>
                     </form>
-
-
                 </div>
             </div>
         </section>

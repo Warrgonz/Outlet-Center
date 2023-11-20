@@ -1,12 +1,15 @@
 package com.outletcenter;
 
 import java.util.Locale;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.servlet.LocaleResolver;
@@ -51,7 +54,7 @@ public class ProjectConfig implements WebMvcConfigurer {
         registry.addViewController("/index").setViewName("index");
         registry.addViewController("/login").setViewName("login");
         registry.addViewController("/registro/nuevo").setViewName("/registro/nuevo");
-    }
+    } // Agregar ruta para admin
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -59,25 +62,21 @@ public class ProjectConfig implements WebMvcConfigurer {
                 .authorizeHttpRequests((request) -> request //Todos tienen acceso a...
                 .requestMatchers("/", "/index", "/errores/**",
                         "/carrito/**", "/pruebas/**", "/reportes/**",
-                        "/registro/**", "/js/**", "/csc/**", "/img/**", "/webjars/**")
+                        "/registro/**", "/js/**", "/csc/**", "/img/**", "/webjars/**", "/ayuda")
                 .permitAll()
-                .requestMatchers( //Tienen acceso a acciones administrativas
+                .requestMatchers(
                         "/producto/nuevo", "/producto/guardar",
                         "/producto/modificar/**", "/producto/eliminar/**",
                         "/categoria/nuevo", "/categoria/guardar",
                         "/categoria/modificar/**", "/categoria/eliminar/**",
                         "/usuario/nuevo", "/usuario/guardar",
                         "/usuario/modificar/**", "/usuario/eliminar/**",
-                        "/reportes/**"
-                ).hasRole("BODEGA")
-                .requestMatchers( //Tienen acceso al inventario
+                        "/reportes/**").hasRole("ADMIN")
+                .requestMatchers(
                         "/producto/listado",
-                        "/categoria/listado",
-                        "/usuario/listado"
-                ).hasAnyRole("BODEGA", "VENDEDOR")
-                .requestMatchers( //Tienen acceso a acciones del cliente
-                        "/facturar/carrito")
-                .hasRole("USUARIO")
+                        "/categoria/listado", //si
+                        "/usuario/listado").hasAnyRole("ADMIN", "VENDEDOR")
+                .requestMatchers("/facturar/carrito").hasRole("USER")
                 )
                 .formLogin((form) -> form
                 .loginPage("/login").permitAll())
