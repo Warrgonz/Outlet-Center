@@ -22,16 +22,30 @@ create table outlet_center.producto (
   id_producto INT NOT NULL AUTO_INCREMENT,
   id_categoria INT NOT NULL,
   descripcion VARCHAR(30) NOT NULL,  
+  marca VARCHAR(30) NOT NULL,  
   detalle VARCHAR(1600) NOT NULL, 
   precio double,
   existencias int,  
   ruta_imagen varchar(1024),
   activo bool,
   PRIMARY KEY (id_producto),
-  foreign key fk_producto_caregoria (id_categoria) references categoria(id_categoria)  
+  foreign key fk_producto_categoria (id_categoria) references categoria(id_categoria)  
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
+
+create table outlet_center.deseo (
+  id_deseo INT NOT NULL AUTO_INCREMENT,
+  descripcion VARCHAR(30) NOT NULL,    
+  existencias int,  
+  ruta_imagen varchar(1024),
+  id_producto INT NOT NULL,
+  PRIMARY KEY (id_producto),
+  foreign key fk_producto (id_producto) references categoria(id_producto)  
+)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4;
+
 
 /*Se crea la tabla de clientes llamada cliente... igual que la clase Cliente */
 CREATE TABLE outlet_center.usuario (
@@ -40,7 +54,7 @@ CREATE TABLE outlet_center.usuario (
   password varchar(512) NOT NULL,
   nombre VARCHAR(20) NOT NULL,
   apellidos VARCHAR(30) NOT NULL,
-  correo VARCHAR(25) NULL,
+  direccion VARCHAR(25) NULL,
   telefono VARCHAR(15) NULL,
   ruta_imagen varchar(1024),
   activo boolean,
@@ -62,6 +76,7 @@ DEFAULT CHARACTER SET = utf8mb4;
 
 create table outlet_center.venta (
   id_venta INT NOT NULL AUTO_INCREMENT,
+  num_orden VARCHAR(20) NOT NULL, # 111-11111-11111
   id_factura INT NOT NULL,
   id_producto INT NOT NULL,
   precio double, 
