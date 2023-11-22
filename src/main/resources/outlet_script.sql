@@ -12,7 +12,7 @@ flush privileges;
 create table outlet_center.categoria (
   id_categoria INT NOT NULL AUTO_INCREMENT,
   descripcion VARCHAR(30) NOT NULL,
-  ruta_imagen varchar(1024),
+  ruta_imagen varchar(1023),
   activo bool,
   PRIMARY KEY (id_categoria))
 ENGINE = InnoDB
