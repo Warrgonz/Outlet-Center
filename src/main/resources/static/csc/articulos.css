@@ -1,0 +1,41 @@
+#barralateral{
+    height: 95%;
+    top: 30%;
+    left: 3%;
+    width: 20%;    
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 10px; /* Redondea los bordes */
+}
+
+.test{
+    background-color: blue;
+}
+
+#contenido{
+    position: absolute;
+    height: 300%;
+    top: 30%;
+    left: 25%;
+    width: 75%;
+    background-color: white;
+    padding: 10px;
+}
+
+br{
+    line-height: 3;
+}
+
+.art-btn-fil{
+    width: 13em;
+    background-color: #085182;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+}
+
+.art-btn-fil:hover{
+    background-color: #393276;
+}

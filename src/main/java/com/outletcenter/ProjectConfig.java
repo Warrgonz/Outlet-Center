@@ -47,7 +47,7 @@ public class ProjectConfig implements WebMvcConfigurer {
     }
 
     /* Los siguiente métodos son para implementar el tema de seguridad dentro del proyecto */
- /*Rutas por defecto*/
+ /*Rutas por defecto
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("index");
@@ -85,7 +85,7 @@ public class ProjectConfig implements WebMvcConfigurer {
     }
 
     /* El siguiente método se utiliza para completar la clase no es 
-    realmente funcional, la próxima semana se reemplaza con usuarios de BD */
+    realmente funcional, la próxima semana se reemplaza con usuarios de BD 
     @Bean
     public UserDetailsService users() {
         UserDetails admin = User.builder()
@@ -104,6 +104,6 @@ public class ProjectConfig implements WebMvcConfigurer {
                 .roles("USER")
                 .build();
         return new InMemoryUserDetailsManager(user, sales, admin);
-    }
+    }*/
 
 }

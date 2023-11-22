@@ -16,7 +16,7 @@ create table outlet_center.categoria (
   activo bool,
   PRIMARY KEY (id_categoria))
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4;
+DEFAULT CHARACTER SET = utf8mb4;c
 
 create table outlet_center.producto (
   id_producto INT NOT NULL AUTO_INCREMENT,
