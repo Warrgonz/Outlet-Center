@@ -29,13 +29,28 @@ br{
     line-height: 3;
 }
 
-.art-btn-fil{
+.art-btn2-fil{
     width: 13em;
     background-color: #085182;
     font-family: 'Open Sans', sans-serif;
     font-weight: bolder;
 }
 
-.art-btn-fil:hover{
+.art-btn2-fil:hover{
+    background-color: #393276;
+}
+
+
+
+.art-btn1-fil{
+    
+    color: #085182;
+    background-color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    border-color: #085182;    
+}
+
+.art-btn1-fil:hover{
     background-color: #393276;
 }

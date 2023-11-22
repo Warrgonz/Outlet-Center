@@ -14,12 +14,12 @@
                         <div class="card-body">
                             <div class="input-group mb-2">
                                 <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                                <button type="button" class="btn btn-outline-primary" data-mdb-ripple-init>search</button>
+                                <button type="button" class="btn btn-outline-primary art-btn1-fil" data-mdb-ripple-init>search</button>
                             </div>
                             <br/>
 
 
-                            <h6>[[#{filtro.categoria}]]</h6>
+                            <h5>[[#{filtro.categoria}]]</h5>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="tecnologia" id="tecnologia">
                                     <label class="form-check-label" for="tecnologia">
@@ -65,7 +65,7 @@
                                                required="true"/>
                                     </div>
                                     <div class="mb-2 text-center">
-                                        <button type="submit" class="btn btn-primary art-btn-fil">
+                                        <button type="submit" class="btn btn-primary art-btn2-fil">
                                             <i class="fas fa-check"></i> [[#{pruebas.ampliadas}]]                                        
                                         </button>
                                     </div>
@@ -79,6 +79,7 @@
                         <!-- Filtro 3 -->
                         <div class="card-body">
                             <h5>[[#{filtro.marcas}]]</h5>
+                            
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="nuestras" id="nuestras">
                                     <label class="form-check-label" for="nuestras">
@@ -107,6 +108,47 @@
 
 
             </section>
+            
+            
+            
+             <section th:fragment="listadoProductos">
+            <div class="container">
+                <div class="row">
+                    <div th:if="${productos != null and !productos.empty}">
+                        <div class="row row-cols-4">
+                            <div class="card" th:each="p :${productos}">
+                                <figure>
+                                    <img 
+                                        th:src="${p.rutaImagen}" 
+                                        class="card-img-top" 
+                                        alt="..."
+                                        height="200"/>
+                                    <figcaption>
+                                        ₡[[${p.precio}+' ('+${p.existencias}+')']]
+                                        <a th:href="@{/producto/eliminar/}+${p.idProducto}">
+                                            <i class="fas fa-trash"></i></a>
+                                        <a th:href="@{/producto/modificar/}+${p.idProducto}">
+                                            <i class="fas fa-pencil"></i></a>
+                                    </figcaption>
+                                </figure>
+                                <div class="card-header">
+                                    <h5 class="card-title">[[${p.descripcion}]]</h5>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">[[${p.detalle}]]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="text-center p-2" th:if="${productos == null or productos.empty}">
+                    <span>[[#{lista.vacia}]]</span>
+                </div>
+            </div>
+        </section>        
+            
+            
+            
         </main>                 
         <footer th:replace="~{layout/components :: footer }"></footer>
     </body>
