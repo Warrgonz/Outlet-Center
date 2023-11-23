@@ -21,7 +21,6 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 @Configuration
 public class ProjectConfig implements WebMvcConfigurer {
-    // Internalizacion del sitio.
 
     @Bean
     public LocaleResolver localeResolver() {
@@ -46,15 +45,14 @@ public class ProjectConfig implements WebMvcConfigurer {
 
     }
 
-    /* Los siguiente métodos son para implementar el tema de seguridad dentro del proyecto */
- /*Rutas por defecto
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("index");
         registry.addViewController("/index").setViewName("index");
         registry.addViewController("/login").setViewName("login");
+        registry.addViewController("/dashboard").setViewName("dashboard");
         registry.addViewController("/registro/nuevo").setViewName("/registro/nuevo");
-    } // Agregar ruta para admin
+    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -62,7 +60,7 @@ public class ProjectConfig implements WebMvcConfigurer {
                 .authorizeHttpRequests((request) -> request //Todos tienen acceso a...
                 .requestMatchers("/", "/index", "/errores/**",
                         "/carrito/**", "/pruebas/**", "/reportes/**",
-                        "/registro/**", "/js/**", "/csc/**", "/img/**", "/webjars/**", "/ayuda")
+                        "/registro/**", "/js/**", "/csc/**", "/img/**", "/webjars/**", "/ayuda", "/profile")
                 .permitAll()
                 .requestMatchers(
                         "/producto/nuevo", "/producto/guardar",
@@ -74,7 +72,7 @@ public class ProjectConfig implements WebMvcConfigurer {
                         "/reportes/**").hasRole("ADMIN")
                 .requestMatchers(
                         "/producto/listado",
-                        "/categoria/listado", //si
+                        "/categoria/listado", 
                         "/usuario/listado").hasAnyRole("ADMIN", "VENDEDOR")
                 .requestMatchers("/facturar/carrito").hasRole("USER")
                 )
@@ -84,14 +82,12 @@ public class ProjectConfig implements WebMvcConfigurer {
         return http.build();
     }
 
-    /* El siguiente método se utiliza para completar la clase no es 
-    realmente funcional, la próxima semana se reemplaza con usuarios de BD 
     @Bean
     public UserDetailsService users() {
         UserDetails admin = User.builder()
                 .username("juan")
                 .password("{noop}123")
-                .roles("USER", "VENDEDOR", "ADMIN")
+                .roles( "VENDEDOR", "ADMIN")
                 .build();
         UserDetails sales = User.builder()
                 .username("rebeca")
@@ -104,6 +100,6 @@ public class ProjectConfig implements WebMvcConfigurer {
                 .roles("USER")
                 .build();
         return new InMemoryUserDetailsManager(user, sales, admin);
-    }*/
+    }
 
 }

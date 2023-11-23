@@ -111,6 +111,19 @@ button:hover{
     background-color: #393276;
 }
 
+.btn-salir{
+    background: none;
+    min-width: 100%;
+}
+
+.under-construction h1{
+    color: #da1f36;
+}
+
+.under-construction h2{
+    color: #085182;
+}
+
 @media (min-width: 768px) and (max-width: 1024px) {
     .navbar-brand {
         margin-right: 0;

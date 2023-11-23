@@ -5,15 +5,21 @@
     </head> 
     <body>
         <nav th:replace="~{layout/components :: navbar }"></nav>
-        <ul class="d-flex flex-column py-4">
-            <li><a th:href="@{/login}">Iniciar sesión</a></li>
-            <li><a th:href="@{/pedidos}">Tus pedidos</a></li>
-            <li><a th:href="@{/profile}">Profile</a></li> 
-            <li><a th:href="@{/ayuda}">Centro de ayuda</a></li>
-            <li><a th:href="@{/dashboard}">dashboard</a></li>
-            <li><a th:href="@{/articulos}">articulos</a></li>
-        </ul>
+        <!--<h1 class="d-flex justify-content-center align-items-center vh-100">[[#{admin.construccion}]]</h1>-->
 
+        <section class="container">
+            <div class="row">
+                <div class="under-construction col-sm-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center">
+                    <h1>Oops!</h1>
+                    <h2>Sitio en construcción</h2>
+                    <p>Gracias por visitar el Outlet Center, este sitio estará disponible en breve. Por favor intentélo mas tarde.</p>
+
+                </div>
+                <div  class="col-sm-12 col-md-12 col-lg-6">
+                    <img src="/img/under-construction.png" style="width: 100%;" alt="under construction image"/>
+                </div>
+            </div>
+        </section>
         <footer th:replace="~{layout/components :: footer }"></footer>
     </body>
 </html>
