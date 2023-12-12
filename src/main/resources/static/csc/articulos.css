@@ -1,28 +1,35 @@
-#barralateral{
+.barralateral{
+ 
     height: 95%;
     top: 30%;
     left: 3%;
     width: 20%;    
     padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+
     border-radius: 10px; /* Redondea los bordes */
 }
 
-.test{
-    background-color: blue;
+
+.contenedor{
+    display: flex;
+    width: 98%;
 }
 
 #contenido{
-    position: absolute;
+
     height: 300%;
     top: 30%;
     left: 25%;
     width: 75%;
     background-color: white;
     padding: 10px;
+    
+}
+
+.productos-lista{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
 }
 
 br{
