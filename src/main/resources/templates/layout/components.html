@@ -19,7 +19,7 @@
             <link href="/csc/profile.css" rel="stylesheet" type="text/css"/>
             <link href="/csc/pedidos.css" rel="stylesheet" type="text/css"/>
             <link href="/csc/ayuda.css" rel="stylesheet" type="text/css"/>
-            <link href="csc/articulos.css" rel="stylesheet" type="text/css"/>
+            <link href="/csc/articulos.css" rel="stylesheet" type="text/css"/>
 
 
             <!--Scripts-->
@@ -124,7 +124,7 @@
                                 <div>
                                     <ul class="navbar-nav d-flex flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link active" th:href="@{/articulos}">[[#{admin.tienda}]]</a>
+                                            <a class="nav-link active" th:href="@{/producto/listado}">[[#{admin.tienda}]]</a>
                                         </li>
                                         <li class="nav-item" sec:authorize="hasRole('ROLE_USER')">
                                             <a class="nav-link active" th:href="@{/pedidos}">[[#{user.ordenes}]]</a>

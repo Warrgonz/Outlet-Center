@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class ArticulosController {
-
+/*
         @GetMapping("/articulos")
     public String articulosPage() {
         return "articulos/articulos"; // Esto hace referencia a "login.html" dentro de la carpeta "login"
-    }
+    }*/
 }

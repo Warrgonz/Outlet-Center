@@ -54,14 +54,15 @@ public class ProjectConfig implements WebMvcConfigurer {
         registry.addViewController("/registro/nuevo").setViewName("/registro/nuevo");
         
     }
-
+/*
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((request) -> request //Todos tienen acceso a...
                 .requestMatchers("/", "/index", "/errores/**",
                         "/carrito/**", "/pruebas/**", "/reportes/**",
-                        "/registro/**", "/js/**", "/csc/**", "/img/**", "/webjars/**", "/ayuda", "/profile")
+                        "/registro/**", "/js/**", "/csc/**", "/img/**", "/webjars/**", "/ayuda", "/profile",
+                        "/producto/listado")
                 .permitAll()
                 .requestMatchers(
                         "/producto/nuevo", "/producto/guardar",
@@ -72,7 +73,7 @@ public class ProjectConfig implements WebMvcConfigurer {
                         "/usuario/modificar/**", "/usuario/eliminar/**",
                         "/reportes/**").hasRole("ADMIN")
                 .requestMatchers(
-                        "/producto/listado",
+                        
                         "/categoria/listado", 
                         "/usuario/listado").hasAnyRole("ADMIN", "VENDEDOR")
                 .requestMatchers("/facturar/carrito").hasRole("USER")
@@ -101,6 +102,6 @@ public class ProjectConfig implements WebMvcConfigurer {
                 .roles("USER")
                 .build();
         return new InMemoryUserDetailsManager(user, sales, admin);
-    }
+    }*/
 
 }
