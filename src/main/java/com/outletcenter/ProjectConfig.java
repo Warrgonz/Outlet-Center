@@ -54,7 +54,7 @@ public class ProjectConfig implements WebMvcConfigurer {
         registry.addViewController("/registro/nuevo").setViewName("/registro/nuevo");
         
     }
-/*
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -102,6 +102,6 @@ public class ProjectConfig implements WebMvcConfigurer {
                 .roles("USER")
                 .build();
         return new InMemoryUserDetailsManager(user, sales, admin);
-    }*/
+    }
 
 }

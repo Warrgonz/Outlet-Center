@@ -1,8 +1,8 @@
 package com.outletcenter.controller;
 
+import com.outletcenter.service.FirebaseStorageService;
 import com.outletcenter.domain.Usuario;
 import com.outletcenter.service.UsuarioService;
-/*import com.outletcenter.service.FirebaseStorageService;*/
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-
-
-/*AGREGAR FIREBASE*/
 
 @Controller
 @RequestMapping("/usuario")
@@ -35,10 +32,10 @@ public class UsuarioController {
         return "/usuario/modifica";
     }
 
-    /*@Autowired
-    private FirebaseStorageService firebaseStorageService;*/
+    @Autowired
+    private FirebaseStorageService firebaseStorageService;
 
-    /*@PostMapping("/guardar")
+    @PostMapping("/guardar")
     public String usuarioGuardar(Usuario usuario,
             @RequestParam("imagenFile") MultipartFile imagenFile) {
         if (!imagenFile.isEmpty()) {
@@ -51,7 +48,7 @@ public class UsuarioController {
         }
         usuarioService.save(usuario, true);
         return "redirect:/usuario/listado";
-    }*/
+    }
 
     @GetMapping("/eliminar/{idUsuario}")
     public String usuarioEliminar(Usuario usuario) {

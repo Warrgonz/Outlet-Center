@@ -83,23 +83,21 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-        <dependency><!--Firebase-->
+        <dependency>
             <groupId>com.google.firebase</groupId>
             <artifactId>firebase-admin</artifactId>
             <version>9.1.1</version>
         </dependency>  
-        
-         <dependency><!--Libreria de jasper-->
+        <dependency><!--Libreria de jasper-->
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
             <version>6.20.6</version>
         </dependency> 
-        
- 
-   
-        
-         
-              
+        <dependency> <!--Enviar correos-->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+             
     </dependencies>
 
     <build>
