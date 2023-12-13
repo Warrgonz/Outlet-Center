@@ -74,6 +74,7 @@ public class ProductoController {
         return "/producto/modifica";
     }
 
+    //Filtro para filtrar por categoria
     @GetMapping("/listado/{idCategoria}")
     public String listado(Model model, Categoria categoria) {
         var productos = categoriaService.getCategoria(categoria).getProductos();
@@ -83,4 +84,16 @@ public class ProductoController {
         model.addAttribute("categorias", categorias);
         return "/producto/listado";
     }
+
+    //Filtro para filtrar por precio
+    @PostMapping("/query1")
+    public String consulta1(@RequestParam(value = "precioInf") double precioInf, @RequestParam(value = "precioSup") double precioSup, Model model) {
+
+        var productos = productoService.consultaQuery(precioInf, precioSup);
+        model.addAttribute("productos", productos);
+        model.addAttribute("precioInf", precioInf);
+        model.addAttribute("precioSup", precioSup);
+        return "/producto/listado";
+    }
+
 }
