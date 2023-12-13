@@ -1,5 +1,6 @@
 package com.outletcenter.controller;
 
+import com.outletcenter.domain.Categoria;
 import com.outletcenter.domain.Producto;
 import com.outletcenter.service.CategoriaService;
 import com.outletcenter.service.ProductoService;
@@ -43,7 +44,6 @@ public class ProductoController {
 
     //@Autowired
     //private FirebaseStorageServiceImpl firebaseStorageService;
-
     @PostMapping("/guardar")
     public String productoGuardar(Producto producto,
             @RequestParam("imagenFile") MultipartFile imagenFile) {
@@ -72,5 +72,15 @@ public class ProductoController {
         var categorias = categoriaService.getCategorias(true);
         model.addAttribute("categorias", categorias);
         return "/producto/modifica";
+    }
+
+    @GetMapping("/listado/{idCategoria}")
+    public String listado(Model model, Categoria categoria) {
+        var productos = categoriaService.getCategoria(categoria).getProductos();
+        var categorias = categoriaService.getCategorias(true);
+        model.addAttribute("productos", productos);
+        model.addAttribute("totalProductos", productos.size());
+        model.addAttribute("categorias", categorias);
+        return "/producto/listado";
     }
 }
