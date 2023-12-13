@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/reportes")
+@RequestMapping("/reporte")
 public class ReporteController {
 
     @Autowired
@@ -35,7 +35,7 @@ public class ReporteController {
         model.addAttribute("fechaInicio", fechaIni);
         model.addAttribute("fechaFin", fechaFin);
 
-        return "/reportes/principal";
+        return "/reporte/principal";
     }
 
     @GetMapping("/usuarios")

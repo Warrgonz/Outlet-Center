@@ -139,7 +139,7 @@
                                             <a class="nav-link active" th:href="@{/ayuda}">[[#{barra.ayuda}]]</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link active" th:href="@{/ubica}">[[#{barra.ubica}]]</a>
+                                            <a class="nav-link active" th:href="@{/ubicaciones}">[[#{barra.ubica}]]</a>
                                         </li>
                                         <div sec:authorize="hasRole('ROLE_VENDEDOR')">
                                             <li class="nav-item">
@@ -152,7 +152,7 @@
                                                 <a class="nav-link active" th:href="@{/usuarios}">[[#{admin.usuarios}]]</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link active" th:href="@{/reportes}">[[#{admin.reportes}]]</a>
+                                                <a class="nav-link active" th:href="@{/reporte/principal}">[[#{admin.reportes}]]</a>
                                             </li>
                                         </div>
                                     </ul>
