@@ -6,22 +6,57 @@
     <body>
         <nav th:replace="~{layout/components :: navbar }"></nav>
         <!--<h1 class="d-flex justify-content-center align-items-center vh-100">[[#{admin.construccion}]]</h1>-->
-        
-        <section th:replace="~{carrito/fragmentos :: listadoProductos}"/>
 
-        <section class="container">
-            <div class="row">
-                <div class="under-construction col-sm-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center">
-                    <h1>Oops!</h1>
-                    <h2>Sitio en construcción</h2>
-                    <p>Gracias por visitar el Outlet Center, este sitio estará disponible en breve. Por favor intentélo mas tarde.</p>
+        <!--  <section th:replace="~{carrito/fragmentos :: listadoProductos}"/>-->
 
-                </div>
-                <div  class="col-sm-12 col-md-12 col-lg-6">
-                    <img src="/img/under-construction.png" style="width: 100%;" alt="under construction image"/>
-                </div>
+        <section>
+            <div class="img-banner">
+                <img src="/img/banner.png" alt="banner"/>
             </div>
         </section>
+        <main>
+            <section class=" container ofertas">
+                <div class="py-5 d-flex align-items-center">
+                    <h1>[[#{titulo.banner}]]</h1><span class="px-3">[[#{titulo.mas}]]</span>  
+                </div>
+                <!--For carrousel-->
+                <div>
+                    <figure class="card" style="width: 17rem;">
+                        <img src="img/imgprueba.jpg" alt=""/>
+                        <figcaption class="card-body">
+                            <h5 class="card-title">Monos</h5>
+                            <p>$1500</p>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <button>[[#{carrito.agregar}]]</button>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
+            <section class="services py-5">
+                    <h1 class="text-center py-4 text-light">[[#{titulo.servicios}]]</h1>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4 col-lg-4 d-flex flex-column justify-content-center align-items-center py-5">
+                            <div class="py-2">
+                                <i class=" py-3 fa-solid fa-users-between-lines"></i>
+                            </div>
+                            <h4 class="text-light">[[#{titulo.uno}]]</h4>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4 d-flex flex-column justify-content-center align-items-center py-5">
+                            <div class="py-2">
+                                <i class="py-3 fa-solid fa-shop"></i>
+                            </div>
+                            <h4 class="text-light">[[#{titulo.dos}]]</h4>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4 d-flex flex-column justify-content-center align-items-center py-5">
+                            <div class="py-2">
+                                <i class="py-3 fa-solid fa-handshake-angle"></i>
+                            </div>
+                            <h4 class='text-light'>[[#{titulo.tres}]]</h4>
+                        </div>
+                    </div>
+            </section>          
+        </main>
         <footer th:replace="~{layout/components :: footer }"></footer>
     </body>
 </html>

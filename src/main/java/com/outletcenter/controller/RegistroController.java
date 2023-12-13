@@ -17,27 +17,27 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @Slf4j
-@RequestMapping("/registro")
+@RequestMapping("/sesion")
 public class RegistroController {
 
     @Autowired
-    private RegistroService registroService;
+    private RegistroService sesionService;
 
     @GetMapping("/nuevo")
     public String nuevo(Model model, Usuario usuario) {
-        return "/registro/nuevo";
+        return "/sesion/nuevo";
     }
 
     @GetMapping("/recordar")
     public String recordar(Model model, Usuario usuario) {
-        return "/registro/recordar";
+        return "/sesion/recordar";
     }
 
     @PostMapping("/crearUsuario")
     public String crearUsuario(Model model, Usuario usuario) 
             throws MessagingException {
-        model = registroService.crearUsuario(model, usuario);
-        return "/registro/salida";
+        model = sesionService.crearUsuario(model, usuario);
+        return "/sesion/salida";
     }
 
     @GetMapping("/activacion/{usuario}/{id}")
@@ -45,11 +45,11 @@ public class RegistroController {
             Model model, 
             @PathVariable(value = "usuario") String usuario, 
             @PathVariable(value = "id") String id) {
-        model = registroService.activar(model, usuario, id);
+        model = sesionService.activar(model, usuario, id);
         if (model.containsAttribute("usuario")) {
-            return "/registro/activa";
+            return "/sesion/activa";
         } else {
-            return "/registro/salida";
+            return "/sesion/salida";
         }
     }
 
@@ -57,14 +57,14 @@ public class RegistroController {
     public String activar(
             Usuario usuario, 
             @RequestParam("imagenFile") MultipartFile imagenFile) {
-        registroService.activar(usuario, imagenFile);
+        sesionService.activar(usuario, imagenFile);
         return "redirect:/";
     }
 
     @PostMapping("/recordarUsuario")
     public String recordarUsuario(Model model, Usuario usuario) 
             throws MessagingException {
-        model = registroService.recordarUsuario(model, usuario);
-        return "/registro/salida";
+        model = sesionService.recordarUsuario(model, usuario);
+        return "/sesion/salida";
     }
 }
