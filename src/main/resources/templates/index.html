@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
     <head th:replace="~{layout/components :: head}">
         <title>Outlet center</title>
     </head> 
     <body>
         <nav th:replace="~{layout/components :: navbar }"></nav>
-        <!--<h1 class="d-flex justify-content-center align-items-center vh-100">[[#{admin.construccion}]]</h1>-->
-
-        <!--  <section th:replace="~{carrito/fragmentos :: listadoProductos}"/>-->
-
         <section>
             <div class="img-banner">
                 <img src="/img/banner.png" alt="banner"/>

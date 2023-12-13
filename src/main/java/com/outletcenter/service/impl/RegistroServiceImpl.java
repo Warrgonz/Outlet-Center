@@ -53,14 +53,14 @@ public class RegistroServiceImpl implements RegistroService {
         var codigo = new BCryptPasswordEncoder();
         usuario.setPassword(codigo.encode(usuario.getPassword()));
 
-//       if (!imagenFile.isEmpty()) {
-//            usuarioService.save(usuario, false);
-//            usuario.setRutaImagen(
-//                    firebaseStorageService.cargaImagen(
-//                            imagenFile,
-//                            "usuarios",
-//                            usuario.getIdUsuario()));
-//        }
+       if (!imagenFile.isEmpty()) {
+            usuarioService.save(usuario, false);
+            usuario.setRutaImagen(
+                    firebaseStorageService.cargaImagen(
+                            imagenFile,
+                            "usuarios",
+                            usuario.getIdUsuario()));
+        }
         usuarioService.save(usuario, true);
     }
 

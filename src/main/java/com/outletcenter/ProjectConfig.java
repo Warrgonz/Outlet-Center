@@ -52,17 +52,17 @@ public class ProjectConfig implements WebMvcConfigurer {
         registry.addViewController("/login").setViewName("login");
         registry.addViewController("/dashboard").setViewName("dashboard");
         registry.addViewController("/registro/nuevo").setViewName("/registro/nuevo");
-        
+
     }
-    
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((request) -> request //Todos tienen acceso a...
                 .requestMatchers("/", "/index", "/errores/**",
                         "/carrito/**", "/pruebas/**", "/reportes/**",
-                        "/registro/**", "/js/**", "/csc/**", "/img/**", "/webjars/**", "/ayuda","/ubicaciones", "/profile",
-                        "/producto/listado", "/producto/**")
+                        "/registro/**", "/js/**", "/csc/**", "/img/**", "/webjars/**", "/ayuda", "/ubicaciones", "/profile",
+                        "/producto/listado", "/producto/**", "/registro/nuevo")
                 .permitAll()
                 .requestMatchers(
                         "/producto/listado", "/producto/guardar",
@@ -73,8 +73,7 @@ public class ProjectConfig implements WebMvcConfigurer {
                         "/usuario/modificar/**", "/usuario/eliminar/**",
                         "/reportes/**").hasRole("ADMIN")
                 .requestMatchers(
-                        
-                        "/categoria/listado", 
+                        "/categoria/listado",
                         "/usuario/listado").hasAnyRole("ADMIN", "VENDEDOR")
                 .requestMatchers("/facturar/carrito").hasRole("USER")
                 )
@@ -89,7 +88,7 @@ public class ProjectConfig implements WebMvcConfigurer {
         UserDetails admin = User.builder()
                 .username("juan")
                 .password("{noop}123")
-                .roles( "VENDEDOR", "ADMIN")
+                .roles("VENDEDOR", "ADMIN")
                 .build();
         UserDetails sales = User.builder()
                 .username("rebeca")
