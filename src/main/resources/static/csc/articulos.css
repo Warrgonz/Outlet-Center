@@ -15,6 +15,15 @@
     width: 98%;
 }
 
+#li-1{
+  list-style: none;
+
+}
+
+
+#a-1{
+  text-decoration: none;
+}
 #contenido{
 
     height: 300%;
