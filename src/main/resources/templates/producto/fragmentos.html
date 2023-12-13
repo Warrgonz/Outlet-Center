@@ -26,7 +26,6 @@
 
 
                         <h5>[[#{filtro.categoria}]]</h5>
-                        <section th:fragment="categoriasTabs" id="categorias">
                             <div class="row py-4">
                                 <ul>
                                     <li id="li-1">
@@ -41,8 +40,6 @@
                                            >[[${categoria.descripcion}]]</a>
                                     </li>
                                 </ul>
-                            </div>
-                        </section>
                     </div>
 
 
@@ -52,7 +49,7 @@
 
                     <div class="card-body">
                         <form method="post"
-                              th:action="@{/pruebas/query1}">
+                              th:action="@{/producto/query1}">
                             <div class="card-body">
                                 <div class="mb-2">
                                     <label for="precioInf">[[#{pruebas.precio.inferior}]]</label>
@@ -296,3 +293,7 @@
         </section>
     </body>
 </html>
+
+        <!-- 5 Fragmento que se utiliza en el fragmento anterior -->
+
+
