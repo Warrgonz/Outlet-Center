@@ -47,7 +47,7 @@ public class ReporteServiceImpl implements ReporteService{
                     ? "inline; " : "attachment; ";
 
             //Se establece la ruta
-            String reportePath = "reportes";
+            String reportePath = "reporte";
 
             //se define la salida temporal del repotre
             ByteArrayOutputStream salida = new ByteArrayOutputStream();
