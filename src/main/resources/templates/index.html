@@ -14,7 +14,11 @@
         <main>
             <section class=" container ofertas">
                 <div class="py-5 d-flex align-items-center">
-                    <h1>[[#{titulo.banner}]]</h1><span class="px-3">[[#{titulo.mas}]]</span>  
+                    <h1>[[#{titulo.banner}]]</h1>
+                    <a th:href="@{/producto/listado}">                        
+                        <span class="px-3">[[#{titulo.mas}]]</span>  
+                    </a>
+                    
                 </div>
                 <!--For carrousel-->
                 <div>
@@ -28,7 +32,7 @@
                             </div>
                         </figcaption>
                     </figure>
-                </div>
+                </div>                
             </section>
             <section class="services py-5">
                     <h1 class="text-center py-4 text-light">[[#{titulo.servicios}]]</h1>

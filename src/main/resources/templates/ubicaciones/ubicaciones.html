@@ -4,10 +4,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head th:replace="~{layout/components :: head}">
+        <title>Outlet center</title>
     </head>
     <body>
         <nav th:replace="~{layout/components :: navbar }"></nav>
@@ -15,26 +13,26 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
         <header>
             <div style="text-align: center; width: 50%; margin: 0 auto;"> 
-                <h1> Destinos y Ubicaciones </h1>
+                <h1>Destinos y Ubicaciones</h1>
             </div>
             <div style="text-align: center; width: 50%; margin: 0 auto;"> 
 
-                <h2>  Desamparados </h2>
+                <h2>Desamparados</h2>
 
 
-                <article>
+                    <article>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31444.266328180584!2d-84.10582262074301!3d9.889465703566955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0ef1321fd8ba9%3A0xcc0e551549891dd5!2sOutlet%20Desamparados!5e0!3m2!1ses-419!2scr!4v1701526827733!5m2!1ses-419!2scr" 
-                            width="600"
-                            height="450" 
-                            style="border:0;" 
-                            allowfullscreen=""
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </article>
+                    width="600"
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen=""
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </article>
             </div>
             <div style="text-align: center; width: 50%; margin: 0 auto;"> 
 
-                <h2>  Belén </h2>
+                <h2>Belén</h2>
                 <article>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31435.644457197977!2d-84.222482584375!3d9.979176299999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0f97a639fba0b%3A0xcea8037f500d403f!2sOutlet%20Center%20Bel%C3%A9n!5e0!3m2!1ses-419!2scr!4v1701527731730!5m2!1ses-419!2scr" 
                             width="600"
@@ -47,7 +45,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             </div>
             <div style="text-align: center; width: 50%; margin: 0 auto;"> 
 
-                <h2>  San Antonio </h2>
+                <h2>San Antonio</h2>
                 <article>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6610.164416753859!2d-84.05609604659924!3d9.89832593489564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e32973ae1241%3A0x8162e1359c4a2723!2sMulti%20Outlet!5e0!3m2!1ses-419!2scr!4v1701527819321!5m2!1ses-419!2scr"
                             width="600" 

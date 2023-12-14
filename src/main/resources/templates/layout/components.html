@@ -49,8 +49,10 @@
                         </form>
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
                             <li sec:authorize='isAuthenticated()' class="shopping-cart py-2 d-flex align-items-center text-light">
-                                <i class="fa-solid fa-cart-shopping mx-1"></i>
-                                <span>[[#{carrito.carrito}]]</span>
+                                <a th:href="@{/carrito/listado}" class="btn button-art2">
+                                    <i class="fa-solid fa-cart-shopping mx-1"></i>
+                                    <span>[[#{carrito.carrito}]]</span>
+                                </a>
                             </li>
 
                             <li class="nav-item dropdown">

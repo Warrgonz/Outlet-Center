@@ -15,7 +15,7 @@
                     <div class="card-body">
 
                         <!-- Boton Agregar Producto -->
-                        <div class="d-flex justify-content-start align-items-start mb-3">
+                        <div class="d-flex justify-content-start align-items-start mb-3" sec:authorize="hasRole('ROLE_ADMIN')">
                             <button                            type="button"
                                                                class="button-art btn-block"
                                                                data-bs-toggle="modal"
@@ -26,62 +26,62 @@
 
 
                         <h5>[[#{filtro.categoria}]]</h5>
-                            <div class="row py-4">
-                                <ul>
-                                    <li id="li-1">
-                                        <a id="a-1"
-                                           aria-current="page"
-                                           href="/producto/listado"
-                                           >[[#{pruebas.todas}]]</a>
-                                    </li>
-                                    <li th:each="categoria : ${categorias}" id="li-1">
-                                        <a id="a-1"
-                                           th:href="@{/producto/listado/}+${categoria.idCategoria}"
-                                           >[[${categoria.descripcion}]]</a>
-                                    </li>
-                                </ul>
+                        <div class="row py-4">
+                            <ul>
+                                <li id="li-1">
+                                    <a id="a-1"
+                                       aria-current="page"
+                                       href="/producto/listado"
+                                       >[[#{pruebas.todas}]]</a>
+                                </li>
+                                <li th:each="categoria : ${categorias}" id="li-1">
+                                    <a id="a-1"
+                                       th:href="@{/producto/listado/}+${categoria.idCategoria}"
+                                       >[[${categoria.descripcion}]]</a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+
+
+                        <!-- Filtro 2 -->
+
+                        <div class="card-body">
+                            <form method="post"
+                                  th:action="@{/producto/query1}">
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <label for="precioInf">[[#{pruebas.precio.inferior}]]</label>
+                                        <input type="number"
+                                               class="form-control"
+                                               name="precioInf"
+                                               th:value="${precioInf}"
+                                               required="true"/>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="precioSup">[[#{pruebas.precio.superior}]]</label>
+                                        <input type="number"
+                                               class="form-control"
+                                               name="precioSup"
+                                               th:value="${precioSup}"
+                                               required="true"/>
+                                    </div>
+                                    <div class="mb-2 text-center">
+                                        <button type="submit" class="btn btn-primary art-btn2-fil">
+                                            <i class="fas fa-check"></i> [[#{pruebas.ampliadas}]]
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <br/>
+
+
+
+
+                        <br/>
                     </div>
-
-
-
-
-                    <!-- Filtro 2 -->
-
-                    <div class="card-body">
-                        <form method="post"
-                              th:action="@{/producto/query1}">
-                            <div class="card-body">
-                                <div class="mb-2">
-                                    <label for="precioInf">[[#{pruebas.precio.inferior}]]</label>
-                                    <input type="number"
-                                           class="form-control"
-                                           name="precioInf"
-                                           th:value="${precioInf}"
-                                           required="true"/>
-                                </div>
-                                <div class="mb-2">
-                                    <label for="precioSup">[[#{pruebas.precio.superior}]]</label>
-                                    <input type="number"
-                                           class="form-control"
-                                           name="precioSup"
-                                           th:value="${precioSup}"
-                                           required="true"/>
-                                </div>
-                                <div class="mb-2 text-center">
-                                    <button type="submit" class="btn btn-primary art-btn2-fil">
-                                        <i class="fas fa-check"></i> [[#{pruebas.ampliadas}]]
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <br/>
-
-
-
-
-                    <br/>
-                </div>
 
             </aside>
         </section>
@@ -166,15 +166,15 @@
                                                 alt="..."
                                                 height="300"/>
 
-                                            <figcaption>
+                                            <figcaption >
                                                 ₡[[${p.precio}+'('+${p.existencias}+')']]
-                                                <a th:href="@{/producto/eliminar/}+${p.idProducto}">
+                                                <a th:href="@{/producto/eliminar/}+${p.idProducto}" sec:authorize="hasRole('ROLE_ADMIN')">
                                                     <i class="fas fa-trash"></i></a>
-                                                <a th:href="@{/producto/modificar/}+${p.idProducto}">
+                                                <a th:href="@{/producto/modificar/}+${p.idProducto}" sec:authorize="hasRole('ROLE_ADMIN')">
                                                     <i class="fas fa-pencil"></i></a>
                                             </figcaption>
 
-                                        </figure>
+                                        </figure>                                        
                                         <div class="card-header">
                                             <h5 class="card-title">[[${p.descripcion}]]</h5>
                                         </div>
@@ -182,7 +182,14 @@
                                             <p class="card-text">[[${p.detalle}]]</p>
                                         </div>
                                         <div class="d-flex justify-content-center align-items-center mb-2">
-                                            <button>Agregar al carrito</button>
+                                            <form>
+                                                <input type="hidden" name="texto" th:value="${p.idProducto}"/>
+                                                <input type="hidden" name="texto" th:value="${p.existencias}"/>
+                                                <button class="button-art" id="addCar"
+                                                        name="addCar" onclick="addCard(this.form)"
+                                                        type="button"><i class="fas fa-cart-plus px-1"></i>Agregar al carrito</button>
+                                             
+                                            </form>
                                         </div>                                        
                                     </div>
                                 </div>

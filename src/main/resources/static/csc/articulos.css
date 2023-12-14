@@ -28,6 +28,18 @@
     cursor: pointer;
 }
 
+.button-art2{
+    background-color: #085182;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+
 #li-1{
   list-style: none;
 
